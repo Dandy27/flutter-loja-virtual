@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/commom/drawer/custom_drawer.dart';
+import 'package:loja_virtual/models/page_manager.dart';
+import 'package:provider/provider.dart';
 
 class BaseScreen extends StatelessWidget {
 
@@ -7,19 +9,37 @@ class BaseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      controller: pageController,
-      children: [
-        Scaffold(
-          drawer: CustomDrawer(),
-          appBar: AppBar(
-            title: const Text('home'),
+    return Provider(
+      create: (_) => PageManager(pageController),
+      child: PageView(
+        controller: pageController,
+        children: [
+          Scaffold(
+            drawer: CustomDrawer(),
+            appBar: AppBar(
+              title: const Text('home'),
+            ),
           ),
-        ),
-        Container(color: Colors.green,),
-        Container(color: Colors.red,),
-        Container(color: Colors.yellow,)
-      ],
+          Scaffold(
+            drawer: CustomDrawer(),
+            appBar: AppBar(
+              title: const Text('home2'),
+            ),
+          ),
+          Scaffold(
+            drawer: CustomDrawer(),
+            appBar: AppBar(
+              title: const Text('home3'),
+            ),
+          ),
+          Scaffold(
+            drawer: CustomDrawer(),
+            appBar: AppBar(
+              title: const Text('home4'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
