@@ -4,7 +4,6 @@ import 'package:loja_virtual/screens/base/base_screen.dart';
 
 void main() async {
   runApp(MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +13,12 @@ class MyApp extends StatelessWidget {
       title: 'RR BEBIDAS',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: const Color.fromARGB(255, 4, 125, 141),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 4, 125, 141),
+        appBarTheme: const AppBarTheme(
+          elevation: 0
+
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: BaseScreen(),
