@@ -11,7 +11,7 @@ class BaseScreen extends StatelessWidget {
       controller: pageController,
       children: [
         Scaffold(
-          drawer: CustonDrawer(),
+          drawer: CustomDrawer(),
           appBar: AppBar(
             title: const Text('home'),
           ),

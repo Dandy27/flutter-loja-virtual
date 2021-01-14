@@ -4,25 +4,39 @@ class DrawerTile extends StatelessWidget {
 
   final IconData iconData;
   final String title;
+  final int page;
 
-  DrawerTile({this.iconData, this.title});
+  const DrawerTile({Key key, this.iconData, this.title, this.page}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          iconData,
-          size: 32,
-          color: Colors.grey[700],
+    return InkWell(
+      onTap: (){
+        debugPrint('toquei $page');
+      },
+      child: SizedBox(
+        height: 60,
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: Icon(
+                iconData,
+                size: 32,
+                color: Colors.grey[700],
+              ),
+            ),
+            Text(title,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[700]
+              ),
+            )
+          ],
         ),
-        Text(title,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey[700]
-          ),
-        )
-      ],
+      ),
     );
   }
 }
